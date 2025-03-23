@@ -12,11 +12,12 @@ import { useEffect } from "react";
 export default function Home() {
   const setList = playerStore((state) => state.setList);
   const nextPic = playerStore((state) => state.nextPic);
+  const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
   useEffect(() => {
     const readPlaylist = async () => {
       const response = await axios.get(
-        "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLOU8IrBCWrvS4XGws60SI6DPAoSrJgFp8&maxResults=50&key=AIzaSyBS6EeUXpL25-i8WBQx0mtY9jwia4vQTvU"
+        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLOU8IrBCWrvS4XGws60SI6DPAoSrJgFp8&maxResults=50&key=${API_KEY}`
       );
       const data = await response.data;
       const { items } = data;
