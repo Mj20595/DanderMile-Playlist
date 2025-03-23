@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Do_Hyeon } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+config.autoAddCss = false;
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const do_hyeon = Do_Hyeon({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-Do_Hyeon",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const noto_jp = Noto_Sans_JP({
   subsets: ["latin"],
+  variable: "--font-Noto_Sans_JP",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`font-custom antialiased`}>{children}</body>
     </html>
   );
 }
