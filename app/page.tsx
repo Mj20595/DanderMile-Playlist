@@ -13,11 +13,12 @@ export default function Home() {
   const setList = playerStore((state) => state.setList);
   const nextPic = playerStore((state) => state.nextPic);
   const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
+  const PLAYLIST_ID = process.env.NEXT_PUBLIC_PLAYLIST_ID;
 
   useEffect(() => {
     const readPlaylist = async () => {
       const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLOU8IrBCWrvS4XGws60SI6DPAoSrJgFp8&maxResults=50&key=${API_KEY}`
+        `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${PLAYLIST_ID}&maxResults=50&key=${API_KEY}`
       );
       const data = await response.data;
       const { items } = data;
