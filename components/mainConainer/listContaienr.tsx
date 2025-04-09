@@ -2,7 +2,7 @@
 
 import { faAngleLeft, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import PlayerItem from "./playerItem";
 import playerStore from "@/store/playerStore";
 
@@ -10,6 +10,20 @@ const ListContainer = React.memo(() => {
   const [isToggle, setisToggle] = useState(true);
   const classes_1 = `min-w-20 h-full z-20 absolute bg-playlist-color-3 duration-300 rounded-2xl items-center rounded-r-none border-2 border-r-0 border-playlist-color-4 shrink-0 space-y-4 hover:bg-playlist-color-1/80 peer `;
   const playList = playerStore((state) => state.playList);
+
+  const [dDay, setdDay] = useState<number>(0);
+
+  useEffect(() => {
+    const calcDDay = () => {
+      let offset = 1000 * 60 * 60 * 9;
+      const today = new Date(Date.now() + offset);
+      const start = new Date("2022-10-24");
+      const result = today.getTime() - start.getTime();
+
+      return Math.ceil(result / (1000 * 60 * 60 * 24));
+    };
+    setdDay(calcDDay);
+  }, []);
 
   const onClickToggleButton = useCallback(() => {
     setisToggle((prev) => !prev);
@@ -32,15 +46,14 @@ const ListContainer = React.memo(() => {
         }
       >
         <div className="flex justify-between items-center">
-          <div className="text-5xl font-bold">TRITON</div>
+          <div className="text-5xl font-bold">DanderMile</div>
           <div className="flex items-start space-x-5 pr-2">
             <div>
-              <div className="text-right">D+ 393</div>
-              <div className="text-sm space-x-2 text-black/50 underline">
-                <span>#CITY</span>
-                <span>#POP</span>
-                <span>#ROCK</span>
-                <span>#CHILL</span>
+              <div className="text-right">D+ {dDay}</div>
+              <div className="text-base space-x-2 text-black/50">
+                <span className="whitespace-nowrap">
+                  in a field in full bloom
+                </span>
               </div>
             </div>
             <button

@@ -1,24 +1,36 @@
+"use client";
+
 import {
   faBell,
   faMagnifyingGlass,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = React.memo(() => {
+  const [dDay, setdDay] = useState<number>(0);
+
+  useEffect(() => {
+    const calcDDay = () => {
+      let offset = 1000 * 60 * 60 * 9;
+      const today = new Date(Date.now() + offset);
+      const start = new Date("2022-10-24");
+      const result = today.getTime() - start.getTime();
+
+      return Math.ceil(result / (1000 * 60 * 60 * 24));
+    };
+    setdDay(calcDDay);
+  }, []);
+
   return (
     <>
       <header className="w-full flex justify-between items-center p-4 xl:hidden">
-        {/* <div className="text-5xl font-bold">DAY</div> */}
-        <div className="text-5xl">DAY</div>
+        <div className="text-5xl">DanderMile</div>
         <div>
-          {/* <div className="text-right text-xl font-semibold">D+ 393</div> */}
-          <div className="text-right text-xl ">D+ 393</div>
-          <div className="text-sm space-x-2 text-black/50 underline">
-            <span>#AU</span>
-            <span>#Noir</span>
-            <span>#Dark</span>
+          <div className="text-right text-xl ">D+ {dDay}</div>
+          <div className="text-base space-x-2 text-black/50 ">
+            <span className="whitespace-nowrap">in a field in full bloom</span>
           </div>
         </div>
       </header>
