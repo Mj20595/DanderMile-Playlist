@@ -34,9 +34,30 @@ export default function Home() {
         };
         list.push(info);
       }
+      let nextPage = data.nextPageToken;
+      while (nextPage) {
+        const response_tmp = await axios.get(
+          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&pageToken=${data.nextPageToken}&playlistId=${PLAYLIST_ID}&maxResults=50&key=${API_KEY}`
+        );
+        const data_tmp = await response_tmp.data;
+        const { items } = data_tmp;
+        for (const item of items) {
+          const { snippet } = item;
+          const info = {
+            index: snippet?.position,
+            title: snippet?.title,
+            id: snippet?.resourceId.videoId,
+            thumbnail: snippet?.thumbnails?.default?.url,
+            position: snippet?.position + 1,
+          };
+          list.push(info);
+          if (data_tmp.nextPageToken) {
+            nextPage = data_tmp.nextPageToken;
+          } else nextPage = null;
+        }
+      }
       setList(list);
     };
-
     readPlaylist();
   }, [setList]);
   return (
