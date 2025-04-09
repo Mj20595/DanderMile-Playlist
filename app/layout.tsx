@@ -5,8 +5,9 @@ import "./globals.css";
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
-  title: "Sample Player",
-  description: "확인용 샘플 페이지입니다.",
+  title: "DanderMile Player",
+  description:
+    "DanderMile 페어 플레이리스트 홈페이지입니다. © 2025 All Rights Reserved by @SN_Commission_.",
 };
 
 export default function RootLayout({
