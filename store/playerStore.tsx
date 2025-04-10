@@ -35,7 +35,7 @@ const playerStore = create<PlayerStore>((set, get) => ({
   shuffleList: [],
   volume: 0.5,
   mute: false,
-  nextPic: 1,
+  nextPic: 9,
   readVideoId: (info: SongInfo) => {
     set((state) => ({ nowPlay: info }));
   },
@@ -56,9 +56,9 @@ const playerStore = create<PlayerStore>((set, get) => ({
   },
   setNextPic: () => {
     const currPic = get().nextPic;
-    let index = 1;
+    let index = currPic;
     while (currPic === index) {
-      index = Math.floor(Math.random() * 4) + 1;
+      index = Math.floor(Math.random() * 12);
     }
     set((state) => ({ nextPic: index }));
   },

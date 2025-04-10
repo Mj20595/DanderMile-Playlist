@@ -8,6 +8,27 @@ export const metadata: Metadata = {
   title: "DanderMile Player",
   description:
     "DanderMile 페어 플레이리스트 홈페이지입니다. © 2025 All Rights Reserved by @SN_Commission_.",
+  openGraph: {
+    title: "DanderMile Player",
+    description:
+      "DanderMile 페어 플레이리스트 홈페이지입니다. © 2025 All Rights Reserved by @SN_Commission_.",
+    locale: "ko_KR",
+    images: {
+      url: "/img/img_0.png",
+      alt: "헤더 이미지",
+    },
+  },
+  twitter: {
+    title: "DanderMile Player",
+    description:
+      "DanderMile 페어 플레이리스트 홈페이지입니다. © 2025 All Rights Reserved by @SN_Commission_.",
+    images: [
+      {
+        url: "/img/img_0.png",
+        alt: "헤더 이미지",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

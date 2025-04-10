@@ -62,7 +62,7 @@ export default function Home() {
   }, [setList]);
   return (
     <div
-      className={`relative bg-[url('/img/img_0${nextPic}.jpg')]  bg-cover bg-center grid justify-items-center min-h-dvh max-h-screen select-none after:content-[''] after:absolute after:w-full after:h-full after:backdrop-blur-md noto-sans-400 `}
+      className={`relative bg-[url('/img/img_${nextPic}.png')]  bg-cover bg-center grid justify-items-center min-h-dvh max-h-screen select-none after:content-[''] after:absolute after:w-full after:h-full after:backdrop-blur-md noto-sans-400 `}
     >
       <div className="relative z-50 container bg-playlist-color-2/65 xl:bg-playlist-color-2 w-dvw h-dvh max-w-none xl:w-[1280px] xl:h-[720px] flex flex-col justify-between lg:row-start-2 items-center rounded-none lg:rounded-md overflow-hidden">
         <Header />

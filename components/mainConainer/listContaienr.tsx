@@ -64,7 +64,7 @@ const ListContainer = React.memo(() => {
             </button>
           </div>
         </div>
-        <div className="min-w-full w-[504px] h-40 bg-[url('/img/img_02.jpg')] bg-cover bg-center rounded-lg overflow-hidden"></div>
+        <div className="min-w-full w-[504px] h-40 bg-[url('/img/img_1.png')] bg-cover bg-center rounded-lg overflow-hidden"></div>
         <div className="min-w-full w-[504px] relative z-0">
           <div className="text-2xl font-bold mb-2">Playlist</div>
           <ul className="space-y-2 whitespace-nowrap h-[250px] overflow-auto scrollbar-hide">
