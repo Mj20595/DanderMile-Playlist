@@ -8,7 +8,7 @@ const PictureContainer = React.memo(() => {
       <div
         className={
           `relative w-full h-full bg-cover  bg-[url('/img/img_${nextPic}.png')] ` +
-          (nextPic > 8 ? "bg-top" : "bg-center")
+          (nextPic > 9 ? "bg-top" : "bg-center")
         }
       ></div>
     </div>

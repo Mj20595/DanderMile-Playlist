@@ -8,6 +8,9 @@ const Gallery = React.memo(() => {
           <div className="w-16 h-16 bg-cover bg-center bg-[url('/img/img_0.png')]"></div>
         </li>
         <li className="w-full h-auto">
+          <div className="w-16 h-16 bg-cover bg-center bg-[url('/img/img_9.png')]"></div>
+        </li>
+        <li className="w-full h-auto">
           <div className="w-16 h-16 bg-cover bg-center bg-[url('/img/img_1.png')]"></div>
         </li>
         <li className="w-full h-auto">
@@ -20,7 +23,7 @@ const Gallery = React.memo(() => {
           <div className="w-16 h-16 bg-cover bg-center bg-[url('/img/img_10.png')]"></div>
         </li>
         <li className="w-full h-auto">
-          <div className="w-16 h-16 bg-cover bg-center bg-[url('/img/img_9.png')]"></div>
+          <div className="w-16 h-16 bg-cover bg-center bg-[url('/img/img_12.png')]"></div>
         </li>
         <li className="w-full h-auto">
           <div className="w-16 h-16 bg-cover bg-center bg-[url('/img/img_3.png')]"></div>

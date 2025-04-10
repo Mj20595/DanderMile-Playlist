@@ -58,7 +58,7 @@ const playerStore = create<PlayerStore>((set, get) => ({
     const currPic = get().nextPic;
     let index = currPic;
     while (currPic === index) {
-      index = Math.floor(Math.random() * 12);
+      index = Math.floor(Math.random() * 13);
     }
     set((state) => ({ nextPic: index }));
   },
