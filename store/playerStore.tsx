@@ -35,7 +35,7 @@ const playerStore = create<PlayerStore>((set, get) => ({
   shuffleList: [],
   volume: 0.5,
   mute: false,
-  nextPic: 9,
+  nextPic: 0,
   readVideoId: (info: SongInfo) => {
     set((state) => ({ nowPlay: info }));
   },
